@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  background-color: #131316;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.heading-bg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+#container {
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+  font-size: 150px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+.gradient-summary {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%);
+  /* background-image: linear-gradient(to right, #ec2f4b, #009fff); */
+}
+
+.gradient-exp {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%); */
+  background-image: linear-gradient(to left, #11998e, #38ef7d);
+}
+
+.gradient-edu {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%); */
+  background-image: linear-gradient(to right, #ec2f4b, #009fff);
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  text-align: left;
+  /* text-justify: inter-word; */
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  /* transform: translateY(-100%); */
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  /* transform: translateY(0); */
+}
+
+.logos {
+  display: flex;
+}
+
+.logo:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.logo:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+#gradient-box {
+  width: 100%;
+  /* min-height: 100vh; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.GradientBorder {
+  position: relative;
+  /* width: 450px; */
+  padding: 20px;
+  font-size: 5em;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  background: #131316;
+}
+
+.GradientBorder::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -1;
+}
+
+.GradientBorder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -2;
+  filter: blur(40px);
+}
