@@ -8,10 +8,11 @@
   <title>Jason Veng</title>
   
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script defer src="index.js"></script>
 </head>
 <body>
-  <section class="hidden">
+  <section class="hidden" data-color="black">
     <svg class=heading-bg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
     <defs>
     <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5"><animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate><stop offset="0%" stop-color="rgba(255, 0, 255, 1)"></stop><stop offset="100%" stop-color="rgba(255, 0, 255, 0)"></stop></radialGradient>
@@ -43,93 +44,97 @@
     </rect>
     </svg>
     <h1>Jason Veng</h1>
-    <a style="font-size: 30px; color: #FFFFFF" href = "mailto: jasonveng@outlook.com">jasonveng@outlook.com</a>
+    <!-- <span style='font-size:100px;'>&#8595;</span> -->
+    <div class="arrow bounce"></div>
   </section>
   
   <div id="container">
-    <section class="hidden">
+    <section class="hidden" data-color="black">
       <h2>
         <span class="gradient-summary">Summary</span><br>
-        I am an aspiring developer. <span style="color: #A1A1A6">I am reliable and hard working. I am adaptable to all challenging situations.</span>
+        I am an aspiring developer. I am reliable, hard working and I am adaptable to all challenging situations.
       </h2>
     </section>
     
-    <section class="hidden">
+    <section class="hidden" data-color="black">
       <h2 style="font-size: 35px">
-        <span style="text-decoration: underline">Experience</span><br>
-        <span class="gradient-ex">Deli Supervisor</span>, Thorndon New World<br>
-        <span style="color: #A1A1A6">
-          03/2023 - Present<br>
-          - talk about role responsilbity<br>
-          - describe your daily work nauture of your role<br>
-          - whats cahllengeing<br>
-          - what your skil you grow + what skil your pick up<br>
-        </span>
-        <span class="gradient-exp">Produce 3IC</span>, Thorndon New World<br>
-        <span style="color: #A1A1A6">
-          2018 - 03/2013<br>
-          - talk about role responsilbity<br>
-          - describe your daily work nauture of your role<br>
-          - whats cahllengeing<br>
-          - what your skil you grow + what skil your pick up<br>
-        </span>
-        <span class="gradient-exp">Produce Asisistant</span>, Wellington City New World<br>
-        <span style="color: #A1A1A6">
-          2013 - 2018<br>
-          - talk about role responsilbity<br>
-          - describe your daily work nauture of your role<br>
-          - whats cahllengeing<br>
-          - what your skil you grow + what skil your pick up<br>
-        </span>
-        <span class="gradient-exp">Kitchen Hand</span>, The Genghis Khan Restaurant<br>
-        <span style="color: #A1A1A6">
+        <p><span style="text-decoration: underline">Experience</span><br></p>
+        <p>
+          <span class="gradient-exp">Deli Supervisor</span>, Thorndon New World<br>
+          2023 - Present<br>
+          <span style="color: #A1A1A6">
+            My role as deli supervisor is ensuring the team work without friction. Helping with service, helping with fresh products production and any where in the department that require assistant.<br>
+          </span>
+        </p>
+        <p>
+          <span class="gradient-exp">Produce 3IC</span>, Thorndon New World<br>
+          2018 - 2023<br>
+          <span style="color: #A1A1A6">
+            My role as 3IC is to keep the produce department up to the standards our customers expect and ensure our staffs is train to meet those standards. I will take over the salad ordering when our 2IC is unable to. Making sure fruits and veggies are rotated and stock level kept to a minimum. Helping with any area in the department that that’s need help.<br>
+          </span>
+        </p>
+        <p>
+          <span class="gradient-exp">Bulkfood Buyer</span>, Wellington City New World<br>
+          2016 - 2018<br>
+          <span style="color: #A1A1A6">
+            My role as a bulkfood buyer is buying the right amount of stock every week, keeping the bulkfood area full, clean and tidy. And ensuring that bulkfood reach our target gross profit.<br>
+          </span>
+        </p>
+        <p>
+          <span class="gradient-exp">Produce Asisistant</span>, Wellington City New World<br>
+          2013 - 2016<br>
+          <span style="color: #A1A1A6">
+            My role as a produce assistant was making sure I kept the fruits and veggies stack beautifully, helping with customers inquiries and building fruits pyramid display.<br>
+          </span>
+        </p>
+        <p>
+          <span class="gradient-exp">Kitchen Hand</span>, The Genghis Khan Restaurant<br>
           2012 - 2013<br>
-          - talk about role responsilbity<br>
-          - describe your daily work nauture of your role<br>
-          - whats cahllengeing<br>
-          - what your skil you grow + what skil your pick up<br>
-        </span>
+          <span style="color: #A1A1A6">
+            I cut veggies, cook noodles and do the dishes when busy hours was over.<br>
+          </span>
+        </p>
       </h2>
     </section>
     
-    <section class="hidden">
+    <section class="hidden" data-color="black">
       <h2 style="font-size: 35px">
         <span style="text-decoration: underline">Education</span><br>
-        <span class="gradient-edu">Enspiral Dev Academy</span>, Web Developer 2014<br>
-        <span style="color: #A1A1A6">
-          - short description eda - 3 month intensive coding bootcamp<br>
-          - talk about experience at eda<br>
-          - what cohort your were in what tech you learn? what project you were a part<br>
-          - talk about team experience<br>
-        </span>
-        <span class="gradient-edu">Wellington College</span>, 2011 - 2012<br>
+        <p>
+          <span class="gradient-edu">Enspiral Dev Academy</span>, Web Developer 2014<br>
+          <span style="color: #A1A1A6">
+            Attending Enspiral Dev Academy was such an enjoyable experience that time fly. I learn how to work as a team, learn to google and read the documentations. I did spend a lot time debugging trying to get browserify to bundle properly tho.<br>
+          </span>
+        </p>
+        <p><span class="gradient-edu">Wellington College</span>, 2011 - 2012</p><br>
       </h2>
     </section>
     
-    <section class="hidden">
-      <h2>Technical Skills</h2>
-      <div class="logos">
-        <div class="logo" id="gradient-box">   
-          <p class="GradientBorder">
-            JS
-          </p>
-        </div>
-        <div class="logo" id="gradient-box">   
+    <section class="hidden" data-color="black">
+      <h2 style="margin: 0px; font-size: 100px">Technical Skills</h2>
+      <div style="display: flex">
+        <div id="gradient-box">   
           <p class="GradientBorder">
             HTML
           </p>
         </div>
-        <div class="logo" id="gradient-box">   
+        <div id="gradient-box">   
           <p class="GradientBorder">
             CSS
           </p>
         </div>
-        <div class="logo" id="gradient-box">   
+        <div id="gradient-box">   
           <p class="GradientBorder">
-            GIT
+            JS
+          </p>
+        </div>
+        <div id="gradient-box">   
+          <p class="GradientBorder">
+            Git
           </p>
         </div>
       </div>
+        
       <h2 style="font-size: 30px">References available upon request 🙂</h2><br>
     </section>
   </div>
