@@ -166,7 +166,7 @@ section {
 }
 
 #gradient-box {
-  width: 100%;
+  min-width: width: 100vh;
   /* min-height: 100vh; */
   display: grid;
   align-items: center;
