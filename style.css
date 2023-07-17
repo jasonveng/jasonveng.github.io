@@ -118,6 +118,31 @@ h2 {
   background-image: linear-gradient(to bottom, #12c2e9, #c471ed, #f64f59);
 }
 
+.gradient-read {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%); */
+  background-image: linear-gradient(to right, #00c9ff, #92fe9d);
+}
+
+.gradient-pro {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%); */
+  background-image: linear-gradient(to right, #ee0979, #ff6a00);
+}
+
+.gradient-fri {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background-image: linear-gradient(147deg, rgba(249,15,216,1) 0%, rgba(245,67,119,1) 26%, rgba(252,28,28,1) 50%, rgba(255,195,13,1) 75%, rgba(114,251,89,1) 100%); */
+  background-image: linear-gradient(to right, #e65c00, #f9d423);
+}
+
+
 section {
   display: grid;
   place-items: center;
