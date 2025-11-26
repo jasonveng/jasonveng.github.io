@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weyland Industries — Grid Demo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071018; /* dark background */
+      --grid-weak: rgba(255,255,255,0.03);
+      --grid-strong: rgba(255,255,255,0.06);
+      --accent: #00d1ff;
+      --glass: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.02);
+      --maxw: 1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    /* Full-page reset */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      background: var(--bg);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+      display:flex;align-items:center;justify-content:center;padding:48px;
+    }
+
+    /* GRID BACKGROUND - layered repeating gradients */
+    .grid-bg{
+      position:fixed;inset:0;z-index:-2;
+      background:
+        linear-gradient(90deg, var(--grid-weak) 1px, transparent 1px),
+        linear-gradient(var(--grid-weak) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-strong) 2px, transparent 2px),
+        linear-gradient(var(--grid-strong) 2px, transparent 2px),
+        radial-gradient(1200px 1200px at 10% 10%, rgba(255,255,255,0.02), transparent 10%),
+        linear-gradient(180deg, rgba(0,0,0,0.18), transparent 60%);
+      background-size: 40px 40px, 40px 40px, 160px 160px, 160px 160px, 100% 100%, 100% 100%;
+      animation: gridShift 12s linear infinite;
+      opacity:1;
+      pointer-events:none;
+    }
+
+    @keyframes gridShift{
+      0%{transform:translateY(0) translateX(0) rotate(0)}
+      50%{transform:translateY(-6px) translateX(6px) rotate(0.02deg)}
+      100%{transform:translateY(0) translateX(0) rotate(0)}
+    }
+
+    /* Subtle glowing accent lines (like Weyland) */
+    .grid-accent{
+      position:fixed;inset:0;z-index:-1;mix-blend-mode:screen;opacity:0.08;
+      background: repeating-linear-gradient(90deg, transparent 0 120px, rgba(0,209,255,0.04) 120px 121px);
+      filter:blur(12px);
+      animation: accentMove 9s linear infinite reverse;
+    }
+    @keyframes accentMove{0%{transform:translateX(0)}100%{transform:translateX(-160px)}}
+
+    /* Page shell */
+    .site{
+      width:100%;max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:start;
+    }
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;padding:40px;box-shadow:0 6px 30px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    h1{font-size:36px;margin:0 0 12px 0;letter-spacing:-0.02em}
+    p.lead{margin:0 0 22px 0;color:rgba(230,238,246,0.85)}
+
+    .controls{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--accent);cursor:pointer}
+
+    /* Right column card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), 0 8px 30px rgba(0,0,0,0.55);
+    }
+    .stat {font-weight:700;color:var(--accent);font-size:18px}
+
+    /* Footer */
+    .meta{margin-top:20px;color:rgba(230,238,246,0.55);font-size:13px}
+
+    /* responsive */
+    @media (max-width:960px){
+      .site{grid-template-columns:1fr;}
+    }
+
+    /* small utilities */
+    .muted{color:rgba(230,238,246,0.6)}
+    a.logo{display:inline-block;font-weight:800;color:var(--accent);text-decoration:none;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="grid-accent"></div>
+
+  <div class="site">
+    <main class="hero">
+      <a class="logo" href="#">WEYLAND</a>
+      <h1>Grid System — Minimal Corporate Look</h1>
+      <p class="lead">A responsive demo layout with the classic thin-grid backdrop, subtle glow accents, and clean glass panels. Inspired by industrial / corporate branding styles.</p>
+
+      <div class="controls">
+        <button class="btn">Products</button>
+        <button class="btn">Research</button>
+        <button class="btn">Careers</button>
+      </div>
+
+      <section style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+        <article style="background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);">
+          <h3 style="margin:0 0 8px 0">Mission</h3>
+          <p class="muted">Deliver advanced systems with industrial reliability and uncompromising standards.</p>
+        </article>
+        <article style="background:var(--card);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);">
+          <h3 style="margin:0 0 8px 0">Innovation</h3>
+          <p class="muted">We prototype, validate, and scale — the grid is our scaffold for precision.</p>
+        </article>
+      </section>
+
+      <div class="meta">Built using plain HTML/CSS — tweak the <code>background-size</code> in <code>.grid-bg</code> to change density.</div>
+    </main>
+
+    <aside class="card">
+      <h4 style="margin:0 0 6px 0">Status</h4>
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div class="stat">Operational</div>
+          <div class="muted">All systems nominal</div>
+        </div>
+        <div style="text-align:right;color:rgba(230,238,246,0.6)">v1.0.3</div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(180deg,var(--accent),#0077aa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#011;"></div>
+        <div>
+          <div style="font-weight:700">Grid Analytics</div>
+          <div class="muted">14.2% uptime delta</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px" class="muted">Tip: try resizing window to see responsive behaviour.</div>
+    </aside>
+  </div>
+
+  <script>
+    // tiny interactive polish: click to toggle accent visibility
+    document.querySelector('.btn').addEventListener('click', function(){
+      document.querySelector('.grid-accent').style.opacity = document.querySelector('.grid-accent').style.opacity === '0' ? '0.08' : '0';
+    });
+  </script>
+  <button id="theme-toggle" class="fixed top-4 right-4 px-3 py-2 rounded bg-white/20 backdrop-blur text-sm">Toggle Theme</button>
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    btn.onclick = () => {
+      document.documentElement.classList.toggle('dark');
+    };
+  </script>
+</body>
+</html>
